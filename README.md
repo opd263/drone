@@ -45,4 +45,11 @@ Other: TypeScript, SWR, Axios
 Build & Deploy
 npm run build
 
+Design Decisions
+Monorepo: Enables shared types and consistent build tooling across frontend & backend.
+WebSockets: Provides real-time drone telemetry (feed, vitals).
+SWR: Simple data revalidation .
+TailwindCSS: Utility-first design for responsive UI.
+Modular Types: Shared drone types for consistent API responses.
+
 
