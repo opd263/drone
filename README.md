@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Drone Command Center
 
-## Getting Started
+A modern, real-time dashboard for monitoring and controlling drones using WebSocket and REST APIs. Built with Next.js, Tailwind CSS, and Express.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+-  Live drone telemetry: temperature, battery, signal strength
+-  Real-time feed viewer with image overlays
+-  Command drones to pause or return to base
+-  WebSocket-based updates (no polling)
+-  Dark mode support
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+##  Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+FLEET/
+├── apps/
+│ ├── api/ # Express API + WebSocket server
+│ └── web/ # Next.js 15 frontend dashboard
+├── shared/ # Shared type definitions
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## 🚀 Getting Started
 
-To learn more about Next.js, take a look at the following resources:
+### 1. Clone the repo
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+ API Endpoints
+Method	Endpoint	Description
+GET	/api/drones	Get all drones
+GET	/api/drones/:id/vitals	Get drone vitals
+GET	/api/drones/:id/feed	Get base64 image + timestamp
+POST	/api/drones/:id/command	Send drone action (pause/return)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+ WebSocket
+URL: ws://localhost:4000
 
-## Deploy on Vercel
+ Tech Stack
+Frontend: React, Next.js 15, Tailwind CSS
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Backend: Express.js, WebSocket (ws)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Data: In-memory mock drone data
+
+Other: TypeScript, SWR, Axios
+
+Build & Deploy
+npm run build
+
+
