@@ -3,7 +3,8 @@
     "version": "1.0.0",
     "type": "module",
     "scripts": {
-        "dev": "node --loader ts-node/esm src/index.ts"
+        "dev": "node --loader ts-node/esm src/index.ts",
+        "build": "tsc"
     },
     "dependencies": {
         "cors": "^2.8.5",
